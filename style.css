@@ -1,0 +1,89 @@
+/*base reset*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: sans-serif;
+   background-color: #e5e5e5 ;
+   margin: 0 50px;
+   
+   display:flex;
+   overflow: hidden;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+  }
+
+  .app{
+    background-color: #fff;
+    width: 300px;
+    height:auto;
+    border: 5px solid #abcea1;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+
+  .app::-webkit-scrollbar { width: 0 !important }
+
+  .app h4{
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    
+  }
+
+  #addNew{
+    display: flex;
+    background-color: rgba(171, 206, 161, 0.35);
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 5px 15px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .fa-plus{
+    background-color:  #abcea1;
+    padding: 5px;
+    border-radius: 3px;
+   
+  }
+
+  #msg {
+  color: red;
+}
+#tasks{
+  display: grid;
+  gap: 15px;
+
+}
+
+#tasks div{
+  display: grid;
+   background-color: rgba(171, 206, 161, 0.35);
+   border: 5px solid #abcea1;
+   padding: 5px;
+   border-radius: 5px;
+   justify-content: center;
+  
+}
+
+.options{
+  display: flex;
+  justify-content: center;
+ gap: 8px;
+}
+
+.options i{
+  cursor: pointer;
+}
+
+footer{
+  position: relative;
+  margin-bottom: 0%;
+ 
+}
