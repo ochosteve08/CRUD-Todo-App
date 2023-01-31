@@ -17,18 +17,18 @@ form.addEventListener("submit",(event)=>{
 let formValidation =()=>{
     if(textInput.value === ""){
         msg.innerHTML="Task cannot be blank";
-        
+
     }
     else{
-       
+
         msg.innerHTML="";
 
         acceptData();
 
         add.setAttribute("data-bs-dismiss","modal"); /*modal closing after clicking add button*/
         add.click();
-       (()=>{add.setAttribute("data-bs-dismiss","");})(); 
-      
+       (()=>{add.setAttribute("data-bs-dismiss","");})();
+
     }
 }
 
@@ -43,19 +43,20 @@ let acceptData=()=>{
         });
 
     localStorage.setItem("data",JSON.stringify(data));
-    
-    createTask() ;  
+
+    createTask() ;
 }
 
 
 
 /*create new task*/
 let createTask=()=>{
+
     tasks.innerHTML="";
 
     data.map((x,y)=>{
 
-      
+
         return  (tasks.innerHTML +=
               ` <div id=${y} >
                     <span class="fw-bold">${x.text}</span>
@@ -68,7 +69,7 @@ let createTask=()=>{
                 </div>`);
 
     })
-   
+
         resetForm();
 }
 
@@ -76,7 +77,7 @@ let createTask=()=>{
 /*delete task*/
 let deleteTask=(event)=>{
     event.parentElement.parentElement.remove();
-    data.splice(event.parentElement.parentElement.id,1)
+    data.splice(event.parentElement.parentElement.id,1);
     localStorage.setItem("data",JSON.stringify(data));
 }
 
@@ -96,10 +97,9 @@ let resetForm=()=>{
     textInput.value="";
     dateInput.value="";
     textArea.value="";
-        
-}
 
-   
+}
+ 
 /*retrieve data from storage*/
 (()=>{
     data= JSON.parse(localStorage.getItem("data"))||[];
