@@ -5,6 +5,7 @@ let textArea = document.getElementById("textArea");
 let msg = document.getElementById('msg');
 let tasks = document.getElementById("tasks");
 let add = document.getElementById("add");
+let search = document.getElementById('searchTxt');
 
 
 /*click and submit*/
@@ -58,7 +59,7 @@ let createTask=()=>{
 
 
         return  (tasks.innerHTML +=
-              ` <div id=${y} >
+              ` <div class="noteCard id=${y} >
                     <span class="fw-bold">${x.text}</span>
                     <span class="small text-secondary">${x.date}</span>
                     <p>${x.description}</p>
@@ -105,3 +106,30 @@ let resetForm=()=>{
     data= JSON.parse(localStorage.getItem("data"))||[];
     createTask();
 })();
+
+
+
+
+search.addEventListener('input', function(e)
+{
+
+   
+    let inputVal = search.value.toLowerCase();
+     console.log(inputVal);
+    
+    let noteCards = document.getElementsByClassName('noteCard');
+    Array.from(noteCards).forEach(function(element)
+    {
+        let cardTxt = element.getElementsByTagName("p")[0].innerText;
+        console.log(cardTxt);
+        if (cardTxt.includes(inputVal))
+        {
+            element.style.display = "block";
+        }
+        else
+        {
+            element.style.display = "none";
+        }
+    
+    })
+});
