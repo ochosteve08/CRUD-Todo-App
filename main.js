@@ -57,16 +57,17 @@ let createTask=()=>{
     tasks.innerHTML="";
 
     data.map((x,y)=>{
+        let {text,date,description} = x;
 
 
         return  (tasks.innerHTML +=
               ` <div class="noteCard" id=${y} >
-                    <span class="fw-bold">${x.text}</span>
-                    <span class="small text-secondary">${x.date}</span>
-                    <p>${x.description}</p>
+                    <span class="fw-bold">${text}</span>
+                    <span class="small text-secondary">${date}</span>
+                    <p>${description}</p>
                     <span class="options">
                      <i data-bs-toggle="modal" data-bs-target="#form" onClick="editTask(this)" class="fas fa-edit"></i>
-                     <i onCLick="deleteTask(this);createTask()" class="fas fa-trash-alt"></i>
+                     <i onClick="deleteTask(this);createTask()" class="fas fa-trash-alt"></i>
                     </span>
                 </div>`);
 
